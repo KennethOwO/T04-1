@@ -282,5 +282,76 @@
       </svg>
     </div>
   </figure>
+
+  <figure id="scene-grouped-figure">
+    <figcaption>Grouped windows scene (Step 4)</figcaption>
+    <div class="svg-container">
+      <svg
+        id="scene-grouped"
+        viewBox="0 0 800 500"
+        width="800" height="500"
+        aria-labelledby="svgTitle4 svgDesc4"
+        role="img"
+      >
+        <title id="svgTitle4">House and Garden Scene (Grouped Windows)</title>
+        <desc id="svgDesc4">An SVG illustration showing a house and garden, with the two windows refactored into a reusable group for clarity and maintainability.</desc>
+        <style>
+          /* Scoped styles for grouped scene only */
+          #scene-grouped .window-rect { fill: #b3e0ff; stroke: #4a90e2; stroke-width: 2; }
+          #scene-grouped .window-mullion { stroke: #4a90e2; stroke-width: 2; }
+        </style>
+        <!-- Sky -->
+        <rect x="0" y="0" width="800" height="300" fill="#b3e0ff" />
+        <!-- Grass -->
+        <rect x="0" y="300" width="800" height="200" fill="#7ec850" />
+        <!-- Sun (circle) -->
+        <circle cx="100" cy="100" r="50" fill="#ffe066" stroke="#ffd700" stroke-width="4" />
+        <!-- Cloud (ellipse + circles) -->
+        <ellipse cx="250" cy="90" rx="50" ry="28" fill="#fff" />
+        <circle cx="210" cy="95" r="22" fill="#fff" />
+        <circle cx="290" cy="95" r="18" fill="#fff" />
+        <!-- Tree trunk (rect) -->
+        <rect x="650" y="270" width="24" height="70" fill="#8d5524" />
+        <!-- Tree foliage (circle) -->
+        <circle cx="662" cy="250" r="38" fill="#3cb371" />
+        <circle cx="690" cy="265" r="28" fill="#4caf50" />
+        <circle cx="635" cy="265" r="25" fill="#43a047" />
+        <!-- House body (rect) -->
+        <rect x="340" y="220" width="160" height="120" fill="#f5e6cc" stroke="#bfa76f" stroke-width="3" />
+        <!-- Roof (polygon) -->
+        <polygon points="330,220 420,150 510,220" fill="#b55239" stroke="#7a2e1b" stroke-width="3" />
+        <!-- Chimney (rect) -->
+        <rect x="470" y="170" width="22" height="38" fill="#a0522d" stroke="#7a2e1b" stroke-width="2" />
+        <!-- Door (rect) -->
+        <rect x="400" y="280" width="40" height="60" fill="#bfa76f" stroke="#8d5524" stroke-width="2" />
+        <!-- Door knob (circle) -->
+        <circle cx="435" cy="310" r="4" fill="#7a2e1b" />
+        <!-- Grouped window definition: reusable window with mullions -->
+        <g id="window">
+          <rect x="0" y="0" width="35" height="30" class="window-rect" />
+          <line x1="17.5" y1="0" x2="17.5" y2="30" class="window-mullion" />
+          <line x1="0" y1="15" x2="35" y2="15" class="window-mullion" />
+        </g>
+        <!-- Left window: placed at (355,245) with translate -->
+        <use href="#window" transform="translate(355,245)" />
+        <!-- Right window: placed at (445,245) with translate -->
+        <use href="#window" transform="translate(445,245)" />
+        <!-- Grouping windows as <g> allows easy reuse and consistent styling -->
+        <!-- Fence (polyline) -->
+        <polyline points="200,340 210,320 220,340 230,320 240,340 250,320 260,340 270,320 280,340 290,320 300,340" fill="none" stroke="#e0c097" stroke-width="6" />
+        <!-- Fence posts (rects) -->
+        <rect x="200" y="340" width="6" height="40" fill="#e0c097" />
+        <rect x="220" y="340" width="6" height="40" fill="#e0c097" />
+        <rect x="240" y="340" width="6" height="40" fill="#e0c097" />
+        <rect x="260" y="340" width="6" height="40" fill="#e0c097" />
+        <rect x="280" y="340" width="6" height="40" fill="#e0c097" />
+        <rect x="300" y="340" width="6" height="40" fill="#e0c097" />
+        <!-- Curved garden path (path) -->
+        <path d="M430,340 Q420,400 470,470 Q500,490 540,470 Q600,440 570,390 Q550,350 500,350 Q470,350 430,340 Z" fill="#e0d7c3" stroke="#bfa76f" stroke-width="3" opacity="0.8" />
+        <!-- Caption (text) -->
+        <text x="400" y="490" text-anchor="middle" font-size="28" fill="#2d3e50" font-family="Arial, sans-serif">Welcome to the House &amp; Garden!</text>
+      </svg>
+    </div>
+  </figure>
 </body>
 </html>
